@@ -25,4 +25,13 @@ class User extends Authenticatable
 
     // casting
     protected $casts = [];
+
+    public function templates()
+    {
+        return $this->hasMany(Template::class);
+    }
+    public function workouts()
+    {
+        return $this->hasMany(Workout::class);
+    }
 }

@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Volt\Volt;
 
-// Dashboard protetta
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware('auth')->name('dashboard');
+
+Volt::route('/dashboard', 'app-shell')->middleware(['auth'])->name('dashboard');
 
 // Auth routes minimal
 require __DIR__ . '/auth.php';
