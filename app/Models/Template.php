@@ -15,4 +15,8 @@ class Template extends Model
     {
         return $this->hasMany(Workout::class);
     }
+    public function exercises()
+    {
+        return $this->hasMany(TemplateExercise::class);
+    }
 }
