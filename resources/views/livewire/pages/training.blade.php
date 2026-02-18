@@ -5,10 +5,6 @@ use App\Models\Template;
 
 state(['templates' => []]);
 
-// Usiamo una funzione anonima, ma per farla funzionare con Volt
-// il modo più pulito è chiamare la logica direttamente dove serve
-// o usare questa sintassi:
-
 $loadTemplates = function ($component) {
     $component->templates = Template::where('user_id', auth()->id())
         ->with('exercises.exercise')
