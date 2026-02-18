@@ -8,6 +8,11 @@ class Workout extends Model
 {
     protected $fillable = ['user_id', 'template_id', 'name', 'started_at', 'completed_at'];
 
+    protected $casts = [
+        'started_at' => 'datetime',
+        'completed_at' => 'datetime',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

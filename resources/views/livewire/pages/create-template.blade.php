@@ -85,13 +85,13 @@ $save = function () {
     $this->dispatch('template-saved');
 
     // Cambiamo il tab nella Shell principale
-    $this->dispatch('set-tab', tab: 'training');
+    $this->dispatch('set-tab', ['tab' => 'training']);
 };
 ?>
 
 <div class="min-h-screen bg-black p-4 pb-32">
     <div class="flex justify-between items-center mb-6">
-        <button wire:click="$parent.setTab('training')"
+        <button wire:click="$dispatch('set-tab', { tab: 'training' })"
             class="text-slate-400 font-bold uppercase text-xs tracking-widest">Annulla</button>
         <button wire:click="save"
             class="bg-yellow-500 text-black px-6 py-2 rounded-full font-black uppercase text-xs shadow-[0_0_20px_rgba(234,179,8,0.3)]">Salva</button>

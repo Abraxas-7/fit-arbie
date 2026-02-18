@@ -48,8 +48,8 @@ state(['template']);
         @endif
     </div>
 
-    <button
-        class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-black py-4 rounded-2xl uppercase tracking-widest text-xs transition-all active:scale-95 shadow-[0_10px_20px_rgba(234,179,8,0.2)]">
+    <button {{-- Questo lancia l'evento che la Shell sta già ascoltando --}} wire:click="$dispatch('start-workout', { templateId: {{ $template->id }} })"
+        class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-black py-4 rounded-xl uppercase tracking-widest text-sm transition-all active:scale-95 shadow-[0_5px_15px_rgba(234,179,8,0.2)]">
         Start Workout
     </button>
 </div>
